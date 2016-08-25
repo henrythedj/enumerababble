@@ -87,7 +87,7 @@ module Enumerababble
 				answer = arg1
 				for i in 0...self.length do answer = yield(answer,self[i]) end
 			else #if only a symbol (operation) is passed
-				self.my_each do |x| answer = answer.send(arg1,x) end
+				for i in 1...self.length do answer = answer.send(arg1,self[i]) end
 			end
 		else #when an inital and a symbol are passed
 			answer = arg1
